@@ -26,5 +26,10 @@ namespace G_CSHARP_ProcessNote
         {
 
         }
+
+        private void alwaysOnTopButton_CheckedChanged(object sender, EventArgs e)
+        {
+            this.TopMost = alwaysOnTopButton.Checked;
+        }
     }
 }
