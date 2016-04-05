@@ -15,6 +15,9 @@ namespace G_CSHARP_ProcessNote
         public Form1()
         {
             InitializeComponent();
+            Console.WriteLine("fff");
         }
+
+
     }
 }
