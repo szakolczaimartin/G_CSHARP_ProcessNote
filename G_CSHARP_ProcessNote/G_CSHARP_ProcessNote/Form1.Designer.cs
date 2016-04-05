@@ -249,7 +249,6 @@
             this.Controls.Add(this.addCommentButton);
             this.Controls.Add(this.label4);
             this.Name = "Form1";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ExitButton);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
