@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.processListBox = new System.Windows.Forms.ListBox();
             this.label4 = new System.Windows.Forms.Label();
             this.addCommentButton = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
@@ -40,15 +39,11 @@
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.textBox6 = new System.Windows.Forms.TextBox();
             this.textBox7 = new System.Windows.Forms.TextBox();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.PID_box = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.processName_box = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // processListBox
-            // 
-            this.processListBox.FormattingEnabled = true;
-            this.processListBox.Location = new System.Drawing.Point(24, 35);
-            this.processListBox.Name = "processListBox";
-            this.processListBox.Size = new System.Drawing.Size(457, 160);
-            this.processListBox.TabIndex = 2;
             // 
             // label4
             // 
@@ -137,11 +132,34 @@
             this.textBox7.Size = new System.Drawing.Size(218, 44);
             this.textBox7.TabIndex = 23;
             // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.PID_box,
+            this.processName_box});
+            this.dataGridView1.Location = new System.Drawing.Point(24, 19);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(244, 146);
+            this.dataGridView1.TabIndex = 24;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            // 
+            // PID_box
+            // 
+            this.PID_box.HeaderText = "PID";
+            this.PID_box.Name = "PID_box";
+            // 
+            // processName_box
+            // 
+            this.processName_box.HeaderText = "Process Name";
+            this.processName_box.Name = "processName_box";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(507, 398);
+            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.textBox7);
             this.Controls.Add(this.textBox6);
             this.Controls.Add(this.textBox5);
@@ -153,16 +171,14 @@
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.addCommentButton);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.processListBox);
             this.Name = "Form1";
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.ListBox processListBox;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button addCommentButton;
         private System.Windows.Forms.TextBox textBox1;
@@ -174,6 +190,9 @@
         private System.Windows.Forms.TextBox textBox5;
         private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn PID_box;
+        private System.Windows.Forms.DataGridViewTextBoxColumn processName_box;
     }
 }
 
