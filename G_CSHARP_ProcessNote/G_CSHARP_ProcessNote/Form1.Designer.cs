@@ -95,6 +95,7 @@
             this.alwaysOnTopButton.TabIndex = 17;
             this.alwaysOnTopButton.Text = "Always On Top";
             this.alwaysOnTopButton.UseVisualStyleBackColor = true;
+            this.alwaysOnTopButton.CheckedChanged += new System.EventHandler(this.alwaysOnTopButton_CheckedChanged);
             // 
             // textBox2
             // 
@@ -249,6 +250,8 @@
             this.Controls.Add(this.addCommentButton);
             this.Controls.Add(this.label4);
             this.Name = "Form1";
+            this.Text = "Process Note";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ExitButton);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -279,4 +282,3 @@
         private System.Windows.Forms.Label commentFieldLabel;
     }
 }
-
