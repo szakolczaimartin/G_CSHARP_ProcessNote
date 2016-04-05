@@ -42,6 +42,13 @@
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.PID_box = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.processName_box = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cpuLabel = new System.Windows.Forms.Label();
+            this.memoryLabel = new System.Windows.Forms.Label();
+            this.runningTimeLabel = new System.Windows.Forms.Label();
+            this.startTimeLabel = new System.Windows.Forms.Label();
+            this.numberOfThreadsLabel = new System.Windows.Forms.Label();
+            this.commentsLabel = new System.Windows.Forms.Label();
+            this.commentFieldLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -82,7 +89,7 @@
             // alwaysOnTopButton
             // 
             this.alwaysOnTopButton.AutoSize = true;
-            this.alwaysOnTopButton.Location = new System.Drawing.Point(24, 313);
+            this.alwaysOnTopButton.Location = new System.Drawing.Point(381, 317);
             this.alwaysOnTopButton.Name = "alwaysOnTopButton";
             this.alwaysOnTopButton.Size = new System.Drawing.Size(98, 17);
             this.alwaysOnTopButton.TabIndex = 17;
@@ -140,7 +147,7 @@
             this.processName_box});
             this.dataGridView1.Location = new System.Drawing.Point(24, 19);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(244, 146);
+            this.dataGridView1.Size = new System.Drawing.Size(457, 163);
             this.dataGridView1.TabIndex = 24;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
@@ -154,11 +161,81 @@
             this.processName_box.HeaderText = "Process Name";
             this.processName_box.Name = "processName_box";
             // 
+            // cpuLabel
+            // 
+            this.cpuLabel.AutoSize = true;
+            this.cpuLabel.Location = new System.Drawing.Point(64, 199);
+            this.cpuLabel.Name = "cpuLabel";
+            this.cpuLabel.Size = new System.Drawing.Size(29, 13);
+            this.cpuLabel.TabIndex = 25;
+            this.cpuLabel.Text = "CPU";
+            // 
+            // memoryLabel
+            // 
+            this.memoryLabel.AutoSize = true;
+            this.memoryLabel.Location = new System.Drawing.Point(170, 199);
+            this.memoryLabel.Name = "memoryLabel";
+            this.memoryLabel.Size = new System.Drawing.Size(44, 13);
+            this.memoryLabel.TabIndex = 26;
+            this.memoryLabel.Text = "Memory";
+            // 
+            // runningTimeLabel
+            // 
+            this.runningTimeLabel.AutoSize = true;
+            this.runningTimeLabel.Location = new System.Drawing.Point(277, 199);
+            this.runningTimeLabel.Name = "runningTimeLabel";
+            this.runningTimeLabel.Size = new System.Drawing.Size(73, 13);
+            this.runningTimeLabel.TabIndex = 27;
+            this.runningTimeLabel.Text = "Running Time";
+            // 
+            // startTimeLabel
+            // 
+            this.startTimeLabel.AutoSize = true;
+            this.startTimeLabel.Location = new System.Drawing.Point(403, 199);
+            this.startTimeLabel.Name = "startTimeLabel";
+            this.startTimeLabel.Size = new System.Drawing.Size(55, 13);
+            this.startTimeLabel.TabIndex = 28;
+            this.startTimeLabel.Text = "Start Time";
+            // 
+            // numberOfThreadsLabel
+            // 
+            this.numberOfThreadsLabel.AutoSize = true;
+            this.numberOfThreadsLabel.Location = new System.Drawing.Point(24, 248);
+            this.numberOfThreadsLabel.Name = "numberOfThreadsLabel";
+            this.numberOfThreadsLabel.Size = new System.Drawing.Size(98, 13);
+            this.numberOfThreadsLabel.TabIndex = 29;
+            this.numberOfThreadsLabel.Text = "Number of Threads";
+            // 
+            // commentsLabel
+            // 
+            this.commentsLabel.AutoSize = true;
+            this.commentsLabel.Location = new System.Drawing.Point(344, 251);
+            this.commentsLabel.Name = "commentsLabel";
+            this.commentsLabel.Size = new System.Drawing.Size(56, 13);
+            this.commentsLabel.TabIndex = 30;
+            this.commentsLabel.Text = "Comments";
+            // 
+            // commentFieldLabel
+            // 
+            this.commentFieldLabel.AutoSize = true;
+            this.commentFieldLabel.Location = new System.Drawing.Point(21, 318);
+            this.commentFieldLabel.Name = "commentFieldLabel";
+            this.commentFieldLabel.Size = new System.Drawing.Size(128, 13);
+            this.commentFieldLabel.TabIndex = 31;
+            this.commentFieldLabel.Text = "Write here your comment:";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(507, 398);
+            this.Controls.Add(this.commentFieldLabel);
+            this.Controls.Add(this.commentsLabel);
+            this.Controls.Add(this.numberOfThreadsLabel);
+            this.Controls.Add(this.startTimeLabel);
+            this.Controls.Add(this.runningTimeLabel);
+            this.Controls.Add(this.memoryLabel);
+            this.Controls.Add(this.cpuLabel);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.textBox7);
             this.Controls.Add(this.textBox6);
@@ -193,6 +270,13 @@
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.DataGridViewTextBoxColumn PID_box;
         private System.Windows.Forms.DataGridViewTextBoxColumn processName_box;
+        private System.Windows.Forms.Label commentsLabel;
+        private System.Windows.Forms.Label numberOfThreadsLabel;
+        private System.Windows.Forms.Label startTimeLabel;
+        private System.Windows.Forms.Label runningTimeLabel;
+        private System.Windows.Forms.Label memoryLabel;
+        private System.Windows.Forms.Label cpuLabel;
+        private System.Windows.Forms.Label commentFieldLabel;
     }
 }
 
