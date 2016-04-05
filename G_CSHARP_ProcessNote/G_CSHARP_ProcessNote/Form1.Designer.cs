@@ -95,7 +95,6 @@
             this.alwaysOnTopButton.TabIndex = 17;
             this.alwaysOnTopButton.Text = "Always On Top";
             this.alwaysOnTopButton.UseVisualStyleBackColor = true;
-            this.alwaysOnTopButton.CheckedChanged += new System.EventHandler(this.alwaysOnTopButton_CheckedChanged);
             // 
             // textBox2
             // 
