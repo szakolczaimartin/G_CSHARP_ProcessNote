@@ -30,16 +30,16 @@
         {
             this.label4 = new System.Windows.Forms.Label();
             this.addCommentButton = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.AddCommentTextBox = new System.Windows.Forms.TextBox();
             this.showThreadsButton = new System.Windows.Forms.Button();
             this.alwaysOnTopButton = new System.Windows.Forms.CheckBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.CPUTextBox = new System.Windows.Forms.TextBox();
+            this.memoryTextBox = new System.Windows.Forms.TextBox();
+            this.runningTimeTextBox = new System.Windows.Forms.TextBox();
+            this.startTimeTextBox = new System.Windows.Forms.TextBox();
+            this.numberOfThreadTextBox = new System.Windows.Forms.TextBox();
+            this.commentsTextBox = new System.Windows.Forms.TextBox();
+            this.processList = new System.Windows.Forms.DataGridView();
             this.PID_box = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.processName_box = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cpuLabel = new System.Windows.Forms.Label();
@@ -49,7 +49,7 @@
             this.numberOfThreadsLabel = new System.Windows.Forms.Label();
             this.commentsLabel = new System.Windows.Forms.Label();
             this.commentFieldLabel = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.processList)).BeginInit();
             this.SuspendLayout();
             // 
             // label4
@@ -70,16 +70,16 @@
             this.addCommentButton.Text = "Add Comment";
             this.addCommentButton.UseVisualStyleBackColor = true;
             // 
-            // textBox1
+            // AddCommentTextBox
             // 
-            this.textBox1.Location = new System.Drawing.Point(24, 336);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(457, 20);
-            this.textBox1.TabIndex = 12;
+            this.AddCommentTextBox.Location = new System.Drawing.Point(24, 336);
+            this.AddCommentTextBox.Name = "AddCommentTextBox";
+            this.AddCommentTextBox.Size = new System.Drawing.Size(457, 20);
+            this.AddCommentTextBox.TabIndex = 12;
             // 
             // showThreadsButton
             // 
-            this.showThreadsButton.Location = new System.Drawing.Point(143, 264);
+            this.showThreadsButton.Location = new System.Drawing.Point(143, 261);
             this.showThreadsButton.Name = "showThreadsButton";
             this.showThreadsButton.Size = new System.Drawing.Size(100, 23);
             this.showThreadsButton.TabIndex = 13;
@@ -97,60 +97,60 @@
             this.alwaysOnTopButton.UseVisualStyleBackColor = true;
             this.alwaysOnTopButton.CheckedChanged += new System.EventHandler(this.alwaysOnTopButton_CheckedChanged);
             // 
-            // textBox2
+            // CPUTextBox
             // 
-            this.textBox2.Location = new System.Drawing.Point(24, 215);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 20);
-            this.textBox2.TabIndex = 18;
+            this.CPUTextBox.Location = new System.Drawing.Point(24, 215);
+            this.CPUTextBox.Name = "CPUTextBox";
+            this.CPUTextBox.Size = new System.Drawing.Size(100, 20);
+            this.CPUTextBox.TabIndex = 18;
             // 
-            // textBox3
+            // memoryTextBox
             // 
-            this.textBox3.Location = new System.Drawing.Point(143, 215);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(100, 20);
-            this.textBox3.TabIndex = 19;
+            this.memoryTextBox.Location = new System.Drawing.Point(143, 215);
+            this.memoryTextBox.Name = "memoryTextBox";
+            this.memoryTextBox.Size = new System.Drawing.Size(100, 20);
+            this.memoryTextBox.TabIndex = 19;
             // 
-            // textBox4
+            // runningTimeTextBox
             // 
-            this.textBox4.Location = new System.Drawing.Point(263, 215);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(100, 20);
-            this.textBox4.TabIndex = 20;
+            this.runningTimeTextBox.Location = new System.Drawing.Point(263, 215);
+            this.runningTimeTextBox.Name = "runningTimeTextBox";
+            this.runningTimeTextBox.Size = new System.Drawing.Size(100, 20);
+            this.runningTimeTextBox.TabIndex = 20;
             // 
-            // textBox5
+            // startTimeTextBox
             // 
-            this.textBox5.Location = new System.Drawing.Point(381, 215);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(100, 20);
-            this.textBox5.TabIndex = 21;
+            this.startTimeTextBox.Location = new System.Drawing.Point(381, 215);
+            this.startTimeTextBox.Name = "startTimeTextBox";
+            this.startTimeTextBox.Size = new System.Drawing.Size(100, 20);
+            this.startTimeTextBox.TabIndex = 21;
             // 
-            // textBox6
+            // numberOfThreadTextBox
             // 
-            this.textBox6.Location = new System.Drawing.Point(24, 264);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(100, 20);
-            this.textBox6.TabIndex = 22;
+            this.numberOfThreadTextBox.Location = new System.Drawing.Point(24, 264);
+            this.numberOfThreadTextBox.Name = "numberOfThreadTextBox";
+            this.numberOfThreadTextBox.Size = new System.Drawing.Size(100, 20);
+            this.numberOfThreadTextBox.TabIndex = 22;
             // 
-            // textBox7
+            // commentsTextBox
             // 
-            this.textBox7.Location = new System.Drawing.Point(263, 267);
-            this.textBox7.Multiline = true;
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(218, 44);
-            this.textBox7.TabIndex = 23;
+            this.commentsTextBox.Location = new System.Drawing.Point(263, 267);
+            this.commentsTextBox.Multiline = true;
+            this.commentsTextBox.Name = "commentsTextBox";
+            this.commentsTextBox.Size = new System.Drawing.Size(218, 44);
+            this.commentsTextBox.TabIndex = 23;
             // 
-            // dataGridView1
+            // processList
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.processList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.processList.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.PID_box,
             this.processName_box});
-            this.dataGridView1.Location = new System.Drawing.Point(24, 19);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(457, 163);
-            this.dataGridView1.TabIndex = 24;
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            this.processList.Location = new System.Drawing.Point(24, 19);
+            this.processList.Name = "processList";
+            this.processList.Size = new System.Drawing.Size(457, 163);
+            this.processList.TabIndex = 24;
+            this.processList.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // PID_box
             // 
@@ -237,22 +237,22 @@
             this.Controls.Add(this.runningTimeLabel);
             this.Controls.Add(this.memoryLabel);
             this.Controls.Add(this.cpuLabel);
-            this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.textBox7);
-            this.Controls.Add(this.textBox6);
-            this.Controls.Add(this.textBox5);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.processList);
+            this.Controls.Add(this.commentsTextBox);
+            this.Controls.Add(this.numberOfThreadTextBox);
+            this.Controls.Add(this.startTimeTextBox);
+            this.Controls.Add(this.runningTimeTextBox);
+            this.Controls.Add(this.memoryTextBox);
+            this.Controls.Add(this.CPUTextBox);
             this.Controls.Add(this.alwaysOnTopButton);
             this.Controls.Add(this.showThreadsButton);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.AddCommentTextBox);
             this.Controls.Add(this.addCommentButton);
             this.Controls.Add(this.label4);
             this.Name = "Form1";
             this.Text = "Process Note";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ExitButton);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.processList)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -261,16 +261,16 @@
         #endregion
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button addCommentButton;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox AddCommentTextBox;
         private System.Windows.Forms.Button showThreadsButton;
         private System.Windows.Forms.CheckBox alwaysOnTopButton;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.TextBox CPUTextBox;
+        private System.Windows.Forms.TextBox commentsTextBox;
+        private System.Windows.Forms.TextBox numberOfThreadTextBox;
+        private System.Windows.Forms.TextBox startTimeTextBox;
+        private System.Windows.Forms.TextBox runningTimeTextBox;
+        private System.Windows.Forms.TextBox memoryTextBox;
+        private System.Windows.Forms.DataGridView processList;
         private System.Windows.Forms.DataGridViewTextBoxColumn PID_box;
         private System.Windows.Forms.DataGridViewTextBoxColumn processName_box;
         private System.Windows.Forms.Label commentsLabel;
