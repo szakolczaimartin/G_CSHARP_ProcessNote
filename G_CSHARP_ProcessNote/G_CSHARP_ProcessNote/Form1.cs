@@ -48,10 +48,21 @@ namespace G_CSHARP_ProcessNote
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            Process[] processlist = Process.GetProcesses();
+            processList.Rows.Clear();
+            Process[] processArray = Process.GetProcesses();
 
-            
+            foreach (Process theprocess in processArray)
+            {
+                processList.Rows.Add(theprocess.Id, theprocess.ProcessName);
+            }
 
+
+        }
+
+        private void processList_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+
+            Form1_Load(sender, e);
 
         }
     }
