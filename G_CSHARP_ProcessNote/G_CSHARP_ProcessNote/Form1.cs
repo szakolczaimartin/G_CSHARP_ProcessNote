@@ -13,7 +13,7 @@ namespace G_CSHARP_ProcessNote
 {
     public partial class Form1 : Form
     {
-        
+
         public Form1()
         {
             InitializeComponent();
@@ -92,15 +92,20 @@ namespace G_CSHARP_ProcessNote
 
         private void showThreadsButton_Click(object sender, EventArgs e)
         {
+
+
             var processNameValue = processList.CurrentRow.Cells[1].Value.ToString();
             Process[] process = Process.GetProcessesByName(processNameValue);
-            var processThreads = process[0].Threads;
+            //var processThreads = process[0].Threads;
+            ProcessThreadCollection currentThreads = process[0].Threads;
+
             List<string> processStrings = new List<string>();
-            StringBuilder sb = new StringBuilder();
-            foreach (var thread in processThreads)
+            foreach (ProcessThread thread in currentThreads)
             {
-                processStrings.Add(thread.ToString());
+                processStrings.Add(thread.Id.ToString());
             }
+
+            StringBuilder sb = new StringBuilder();
             foreach (var thread in processStrings)
             {
                 sb.AppendLine(thread);
