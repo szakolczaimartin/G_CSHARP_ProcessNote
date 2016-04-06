@@ -13,9 +13,17 @@ namespace G_CSHARP_ProcessNote
 {
     public partial class Form1 : Form
     {
+        PerformanceCounter cpuPerformance = new PerformanceCounter("Processor", "% Processor Time", "_Total");
+        
         public Form1()
         {
             InitializeComponent();
+            CPUTextBox.Text = CpuTime();
+        }
+
+        public string CpuTime()
+        {
+            return cpuPerformance.NextValue() + "%";
         }
 
         private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
