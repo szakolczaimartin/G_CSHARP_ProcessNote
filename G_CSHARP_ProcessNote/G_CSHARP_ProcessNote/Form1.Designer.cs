@@ -74,7 +74,7 @@
             // 
             this.AddCommentTextBox.Location = new System.Drawing.Point(24, 336);
             this.AddCommentTextBox.Name = "AddCommentTextBox";
-            this.AddCommentTextBox.Size = new System.Drawing.Size(457, 20);
+            this.AddCommentTextBox.Size = new System.Drawing.Size(471, 20);
             this.AddCommentTextBox.TabIndex = 12;
             // 
             // showThreadsButton
@@ -102,35 +102,35 @@
             // 
             this.CPUTextBox.Location = new System.Drawing.Point(24, 215);
             this.CPUTextBox.Name = "CPUTextBox";
-            this.CPUTextBox.Size = new System.Drawing.Size(100, 20);
+            this.CPUTextBox.Size = new System.Drawing.Size(115, 20);
             this.CPUTextBox.TabIndex = 18;
             // 
             // memoryTextBox
             // 
             this.memoryTextBox.Location = new System.Drawing.Point(143, 215);
             this.memoryTextBox.Name = "memoryTextBox";
-            this.memoryTextBox.Size = new System.Drawing.Size(100, 20);
+            this.memoryTextBox.Size = new System.Drawing.Size(115, 20);
             this.memoryTextBox.TabIndex = 19;
             // 
             // runningTimeTextBox
             // 
             this.runningTimeTextBox.Location = new System.Drawing.Point(263, 215);
             this.runningTimeTextBox.Name = "runningTimeTextBox";
-            this.runningTimeTextBox.Size = new System.Drawing.Size(100, 20);
+            this.runningTimeTextBox.Size = new System.Drawing.Size(115, 20);
             this.runningTimeTextBox.TabIndex = 20;
             // 
             // startTimeTextBox
             // 
             this.startTimeTextBox.Location = new System.Drawing.Point(381, 215);
             this.startTimeTextBox.Name = "startTimeTextBox";
-            this.startTimeTextBox.Size = new System.Drawing.Size(100, 20);
+            this.startTimeTextBox.Size = new System.Drawing.Size(115, 20);
             this.startTimeTextBox.TabIndex = 21;
             // 
             // numberOfThreadTextBox
             // 
             this.numberOfThreadTextBox.Location = new System.Drawing.Point(24, 264);
             this.numberOfThreadTextBox.Name = "numberOfThreadTextBox";
-            this.numberOfThreadTextBox.Size = new System.Drawing.Size(100, 20);
+            this.numberOfThreadTextBox.Size = new System.Drawing.Size(115, 20);
             this.numberOfThreadTextBox.TabIndex = 22;
             // 
             // commentsTextBox
@@ -138,7 +138,7 @@
             this.commentsTextBox.Location = new System.Drawing.Point(263, 267);
             this.commentsTextBox.Multiline = true;
             this.commentsTextBox.Name = "commentsTextBox";
-            this.commentsTextBox.Size = new System.Drawing.Size(218, 44);
+            this.commentsTextBox.Size = new System.Drawing.Size(232, 44);
             this.commentsTextBox.TabIndex = 23;
             // 
             // processList
@@ -169,7 +169,7 @@
             // cpuLabel
             // 
             this.cpuLabel.AutoSize = true;
-            this.cpuLabel.Location = new System.Drawing.Point(64, 199);
+            this.cpuLabel.Location = new System.Drawing.Point(72, 199);
             this.cpuLabel.Name = "cpuLabel";
             this.cpuLabel.Size = new System.Drawing.Size(29, 13);
             this.cpuLabel.TabIndex = 25;
@@ -178,7 +178,7 @@
             // memoryLabel
             // 
             this.memoryLabel.AutoSize = true;
-            this.memoryLabel.Location = new System.Drawing.Point(170, 199);
+            this.memoryLabel.Location = new System.Drawing.Point(179, 199);
             this.memoryLabel.Name = "memoryLabel";
             this.memoryLabel.Size = new System.Drawing.Size(44, 13);
             this.memoryLabel.TabIndex = 26;
@@ -187,7 +187,7 @@
             // runningTimeLabel
             // 
             this.runningTimeLabel.AutoSize = true;
-            this.runningTimeLabel.Location = new System.Drawing.Point(277, 199);
+            this.runningTimeLabel.Location = new System.Drawing.Point(287, 199);
             this.runningTimeLabel.Name = "runningTimeLabel";
             this.runningTimeLabel.Size = new System.Drawing.Size(73, 13);
             this.runningTimeLabel.TabIndex = 27;
@@ -196,7 +196,7 @@
             // startTimeLabel
             // 
             this.startTimeLabel.AutoSize = true;
-            this.startTimeLabel.Location = new System.Drawing.Point(403, 199);
+            this.startTimeLabel.Location = new System.Drawing.Point(411, 199);
             this.startTimeLabel.Name = "startTimeLabel";
             this.startTimeLabel.Size = new System.Drawing.Size(55, 13);
             this.startTimeLabel.TabIndex = 28;
@@ -205,7 +205,7 @@
             // numberOfThreadsLabel
             // 
             this.numberOfThreadsLabel.AutoSize = true;
-            this.numberOfThreadsLabel.Location = new System.Drawing.Point(24, 248);
+            this.numberOfThreadsLabel.Location = new System.Drawing.Point(32, 248);
             this.numberOfThreadsLabel.Name = "numberOfThreadsLabel";
             this.numberOfThreadsLabel.Size = new System.Drawing.Size(98, 13);
             this.numberOfThreadsLabel.TabIndex = 29;
@@ -214,7 +214,7 @@
             // commentsLabel
             // 
             this.commentsLabel.AutoSize = true;
-            this.commentsLabel.Location = new System.Drawing.Point(344, 251);
+            this.commentsLabel.Location = new System.Drawing.Point(354, 251);
             this.commentsLabel.Name = "commentsLabel";
             this.commentsLabel.Size = new System.Drawing.Size(56, 13);
             this.commentsLabel.TabIndex = 30;
@@ -233,7 +233,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(507, 398);
+            this.ClientSize = new System.Drawing.Size(519, 398);
             this.Controls.Add(this.commentFieldLabel);
             this.Controls.Add(this.commentsLabel);
             this.Controls.Add(this.numberOfThreadsLabel);
