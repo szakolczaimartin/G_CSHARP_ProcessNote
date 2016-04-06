@@ -69,6 +69,7 @@ namespace G_CSHARP_ProcessNote
 
         private void processList_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            // process cpu usage
             var processNameValue = processList.Rows[e.RowIndex].Cells[1].Value;
             var totalCpuUsage = new PerformanceCounter("Processor", "% Processor Time", "_Total");
             var processCpuUsage = new PerformanceCounter("Process", "% Processor Time", processNameValue.ToString());
@@ -76,15 +77,17 @@ namespace G_CSHARP_ProcessNote
             System.Threading.Thread.Sleep(100);
             var calculatedProcessUsage = (totalCpuUsage.NextValue() / 100) * processCpuUsage.NextValue();
             CPUTextBox.Text = calculatedProcessUsage + "%";
-
+            // process memory usage
             int memsize = 0;
             var processMemoryUsage = new PerformanceCounter("Process", "Working Set - Private", processNameValue.ToString());
             memsize = Convert.ToInt32((processMemoryUsage.NextValue()) / (int)(1024));
             memoryTextBox.Text = memsize / 1000 + "MB";
-            
+            // process running/start time
             Process[] process = Process.GetProcessesByName(processNameValue.ToString());
             runningTimeTextBox.Text = (DateTime.Now - process[0].StartTime).ToString();
             startTimeTextBox.Text = process[0].StartTime.ToString();
+            // process's thread counter
+            numberOfThreadTextBox.Text = process[0].Threads.Count.ToString();
         }
     }
 }
