@@ -81,7 +81,10 @@ namespace G_CSHARP_ProcessNote
             var processMemoryUsage = new PerformanceCounter("Process", "Working Set - Private", processNameValue.ToString());
             memsize = Convert.ToInt32((processMemoryUsage.NextValue()) / (int)(1024));
             memoryTextBox.Text = memsize / 1000 + "MB";
-
+            
+            Process[] process = Process.GetProcessesByName(processNameValue.ToString());
+            runningTimeTextBox.Text = (DateTime.Now - process[0].StartTime).ToString();
+            startTimeTextBox.Text = process[0].StartTime.ToString();
         }
     }
 }
