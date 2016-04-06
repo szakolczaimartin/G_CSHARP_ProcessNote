@@ -148,9 +148,10 @@
             this.processName_box});
             this.processList.Location = new System.Drawing.Point(24, 19);
             this.processList.Name = "processList";
-            this.processList.Size = new System.Drawing.Size(457, 163);
+            this.processList.Size = new System.Drawing.Size(266, 163);
             this.processList.TabIndex = 24;
             this.processList.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            this.processList.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.processList_MouseDoubleClick);
             // 
             // PID_box
             // 
@@ -250,9 +251,9 @@
             this.Controls.Add(this.addCommentButton);
             this.Controls.Add(this.label4);
             this.Name = "Form1";
-            this.Load += new System.EventHandler(this.Form1_Load);
             this.Text = "Process Note";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ExitButton);
+            this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.processList)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
