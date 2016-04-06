@@ -13,17 +13,10 @@ namespace G_CSHARP_ProcessNote
 {
     public partial class Form1 : Form
     {
-        PerformanceCounter cpuPerformance = new PerformanceCounter("Processor", "% Processor Time", "_Total");
         
         public Form1()
         {
             InitializeComponent();
-            CPUTextBox.Text = CpuTime();
-        }
-
-        public string CpuTime()
-        {
-            return cpuPerformance.NextValue() + "%";
         }
 
         private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
@@ -71,6 +64,18 @@ namespace G_CSHARP_ProcessNote
         {
 
             Form1_Load(sender, e);
+
+        }
+
+        private void processList_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            var processNameValue = processList.Rows[e.RowIndex].Cells[1].Value;
+            var totalCpuUsage = new PerformanceCounter("Processor", "% Processor Time", "_Total");
+            var processCpuUsage = new PerformanceCounter("Process", "% Processor Time", processNameValue.ToString());
+            var calculatedProcessUsageFirst = (totalCpuUsage.NextValue() / 100) * processCpuUsage.NextValue();
+            System.Threading.Thread.Sleep(100);
+            var calculatedProcessUsage = (totalCpuUsage.NextValue() / 100) * processCpuUsage.NextValue();
+            CPUTextBox.Text = calculatedProcessUsage + "%";
 
         }
     }

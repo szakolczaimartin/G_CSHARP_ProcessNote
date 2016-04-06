@@ -148,8 +148,10 @@
             this.processName_box});
             this.processList.Location = new System.Drawing.Point(24, 19);
             this.processList.Name = "processList";
+            this.processList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.processList.Size = new System.Drawing.Size(266, 163);
             this.processList.TabIndex = 24;
+            this.processList.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.processList_CellClick);
             this.processList.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             this.processList.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.processList_MouseDoubleClick);
             // 
