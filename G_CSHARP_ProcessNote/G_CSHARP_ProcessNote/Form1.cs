@@ -65,5 +65,11 @@ namespace G_CSHARP_ProcessNote
             Form1_Load(sender, e);
 
         }
+
+        private void showThreadsButton_Click(object sender, EventArgs e)
+        {
+            DialogResult dialog = MessageBox.Show("Here are the threads of the current process", "Threads",
+              MessageBoxButtons.OK);
+        }
     }
 }
