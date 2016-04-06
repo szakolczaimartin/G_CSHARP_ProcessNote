@@ -77,6 +77,11 @@ namespace G_CSHARP_ProcessNote
             var calculatedProcessUsage = (totalCpuUsage.NextValue() / 100) * processCpuUsage.NextValue();
             CPUTextBox.Text = calculatedProcessUsage + "%";
 
+            int memsize = 0;
+            var processMemoryUsage = new PerformanceCounter("Process", "Working Set - Private", processNameValue.ToString());
+            memsize = Convert.ToInt32((processMemoryUsage.NextValue()) / (int)(1024));
+            memoryTextBox.Text = memsize / 1000 + "MB";
+
         }
     }
 }
