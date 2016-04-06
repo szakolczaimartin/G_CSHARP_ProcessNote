@@ -85,6 +85,7 @@
             this.showThreadsButton.TabIndex = 13;
             this.showThreadsButton.Text = "Show Threads";
             this.showThreadsButton.UseVisualStyleBackColor = true;
+            this.showThreadsButton.Click += new System.EventHandler(this.showThreadsButton_Click);
             // 
             // alwaysOnTopButton
             // 

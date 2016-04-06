@@ -89,5 +89,23 @@ namespace G_CSHARP_ProcessNote
             // process's thread counter
             numberOfThreadTextBox.Text = process[0].Threads.Count.ToString();
         }
+
+        private void showThreadsButton_Click(object sender, EventArgs e)
+        {
+            var processNameValue = processList.CurrentRow.Cells[1].Value.ToString();
+            Process[] process = Process.GetProcessesByName(processNameValue);
+            var processThreads = process[0].Threads;
+            List<string> processStrings = new List<string>();
+            StringBuilder sb = new StringBuilder();
+            foreach (var thread in processThreads)
+            {
+                processStrings.Add(thread.ToString());
+            }
+            foreach (var thread in processStrings)
+            {
+                sb.AppendLine(thread);
+            }
+            MessageBox.Show(sb.ToString());
+        }
     }
 }
