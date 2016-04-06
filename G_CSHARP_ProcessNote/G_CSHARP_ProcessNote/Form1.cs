@@ -13,6 +13,7 @@ namespace G_CSHARP_ProcessNote
 {
     public partial class Form1 : Form
     {
+        
         public Form1()
         {
             InitializeComponent();
@@ -63,6 +64,23 @@ namespace G_CSHARP_ProcessNote
         {
 
             Form1_Load(sender, e);
+
+        }
+
+        private void processList_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            var processNameValue = processList.Rows[e.RowIndex].Cells[1].Value;
+            var totalCpuUsage = new PerformanceCounter("Processor", "% Processor Time", "_Total");
+            var processCpuUsage = new PerformanceCounter("Process", "% Processor Time", processNameValue.ToString());
+            var calculatedProcessUsageFirst = (totalCpuUsage.NextValue() / 100) * processCpuUsage.NextValue();
+            System.Threading.Thread.Sleep(100);
+            var calculatedProcessUsage = (totalCpuUsage.NextValue() / 100) * processCpuUsage.NextValue();
+            CPUTextBox.Text = calculatedProcessUsage + "%";
+
+            int memsize = 0;
+            var processMemoryUsage = new PerformanceCounter("Process", "Working Set - Private", processNameValue.ToString());
+            memsize = Convert.ToInt32((processMemoryUsage.NextValue()) / (int)(1024));
+            memoryTextBox.Text = memsize / 1000 + "MB";
 
         }
 
