@@ -69,6 +69,7 @@
             this.addCommentButton.TabIndex = 10;
             this.addCommentButton.Text = "Add Comment";
             this.addCommentButton.UseVisualStyleBackColor = true;
+            this.addCommentButton.Click += new System.EventHandler(this.addCommentButton_Click);
             // 
             // AddCommentTextBox
             // 
@@ -143,6 +144,8 @@
             // 
             // processList
             // 
+            this.processList.AllowUserToOrderColumns = true;
+            this.processList.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.processList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.processList.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.PID_box,
@@ -150,7 +153,7 @@
             this.processList.Location = new System.Drawing.Point(24, 19);
             this.processList.Name = "processList";
             this.processList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.processList.Size = new System.Drawing.Size(266, 163);
+            this.processList.Size = new System.Drawing.Size(471, 163);
             this.processList.TabIndex = 24;
             this.processList.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.processList_CellClick);
             this.processList.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
@@ -158,13 +161,17 @@
             // 
             // PID_box
             // 
+            this.PID_box.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.PID_box.HeaderText = "PID";
             this.PID_box.Name = "PID_box";
+            this.PID_box.Width = 50;
             // 
             // processName_box
             // 
+            this.processName_box.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.processName_box.HeaderText = "Process Name";
             this.processName_box.Name = "processName_box";
+            this.processName_box.Width = 101;
             // 
             // cpuLabel
             // 
@@ -276,8 +283,6 @@
         private System.Windows.Forms.TextBox runningTimeTextBox;
         private System.Windows.Forms.TextBox memoryTextBox;
         private System.Windows.Forms.DataGridView processList;
-        private System.Windows.Forms.DataGridViewTextBoxColumn PID_box;
-        private System.Windows.Forms.DataGridViewTextBoxColumn processName_box;
         private System.Windows.Forms.Label commentsLabel;
         private System.Windows.Forms.Label numberOfThreadsLabel;
         private System.Windows.Forms.Label startTimeLabel;
@@ -285,5 +290,7 @@
         private System.Windows.Forms.Label memoryLabel;
         private System.Windows.Forms.Label cpuLabel;
         private System.Windows.Forms.Label commentFieldLabel;
+        private System.Windows.Forms.DataGridViewTextBoxColumn PID_box;
+        private System.Windows.Forms.DataGridViewTextBoxColumn processName_box;
     }
 }

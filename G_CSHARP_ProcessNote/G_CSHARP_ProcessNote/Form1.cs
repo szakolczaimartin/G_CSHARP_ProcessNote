@@ -14,6 +14,8 @@ namespace G_CSHARP_ProcessNote
     public partial class Form1 : Form
     {
 
+        Dictionary<string, string> commentDictionary = new Dictionary<string, string>();
+
         public Form1()
         {
             InitializeComponent();
@@ -69,34 +71,44 @@ namespace G_CSHARP_ProcessNote
 
         private void processList_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            // process cpu usage
-            var processNameValue = processList.Rows[e.RowIndex].Cells[1].Value;
-            var totalCpuUsage = new PerformanceCounter("Processor", "% Processor Time", "_Total");
-            var processCpuUsage = new PerformanceCounter("Process", "% Processor Time", processNameValue.ToString());
-            var calculatedProcessUsageFirst = (totalCpuUsage.NextValue() / 100) * processCpuUsage.NextValue();
-            System.Threading.Thread.Sleep(100);
-            var calculatedProcessUsage = (totalCpuUsage.NextValue() / 100) * processCpuUsage.NextValue();
-            CPUTextBox.Text = calculatedProcessUsage + "%";
-            // process memory usage
-            int memsize = 0;
-            var processMemoryUsage = new PerformanceCounter("Process", "Working Set - Private", processNameValue.ToString());
-            memsize = Convert.ToInt32((processMemoryUsage.NextValue()) / (int)(1024));
-            memoryTextBox.Text = memsize / 1000 + "MB";
-            // process running/start time
-            Process[] process = Process.GetProcessesByName(processNameValue.ToString());
-            runningTimeTextBox.Text = (DateTime.Now - process[0].StartTime).ToString();
-            startTimeTextBox.Text = process[0].StartTime.ToString();
-            // process's thread counter
-            numberOfThreadTextBox.Text = process[0].Threads.Count.ToString();
+            if (e.RowIndex != -1)
+            {
+                // process cpu usage
+                var currentProcess = processList.Rows[e.RowIndex].Cells[1].Value;
+                var totalCpuUsage = new PerformanceCounter("Processor", "% Processor Time", "_Total");
+                var processCpuUsage = new PerformanceCounter("Process", "% Processor Time", currentProcess.ToString());
+                var calculatedProcessUsageFirst = (totalCpuUsage.NextValue() / 100) * processCpuUsage.NextValue();
+                System.Threading.Thread.Sleep(100);
+                var calculatedProcessUsage = (totalCpuUsage.NextValue() / 100) * processCpuUsage.NextValue();
+                CPUTextBox.Text = calculatedProcessUsage + "%";
+                // process memory usage
+                int memsize = 0;
+                var processMemoryUsage = new PerformanceCounter("Process", "Working Set - Private", currentProcess.ToString());
+                memsize = Convert.ToInt32((processMemoryUsage.NextValue()) / (int)(1024));
+                memoryTextBox.Text = memsize / 1000 + "MB";
+                // process running/start time
+                Process[] process = Process.GetProcessesByName(currentProcess.ToString());
+                runningTimeTextBox.Text = (DateTime.Now - process[0].StartTime).ToString();
+                startTimeTextBox.Text = process[0].StartTime.ToString();
+                // process' thread counter
+                numberOfThreadTextBox.Text = process[0].Threads.Count.ToString();
+                // process' comment
+                if (commentDictionary.ContainsKey(currentProcess.ToString()))
+                {
+                    commentsTextBox.Text = commentDictionary[currentProcess.ToString()];
+                }
+                else
+                {
+                    commentsTextBox.Text = string.Empty;
+                }
+            }
+            
         }
 
         private void showThreadsButton_Click(object sender, EventArgs e)
         {
-
-
-            var processNameValue = processList.CurrentRow.Cells[1].Value.ToString();
-            Process[] process = Process.GetProcessesByName(processNameValue);
-            //var processThreads = process[0].Threads;
+            var currentProcess = processList.CurrentRow.Cells[1].Value.ToString();
+            Process[] process = Process.GetProcessesByName(currentProcess);
             ProcessThreadCollection currentThreads = process[0].Threads;
 
             List<string> processStrings = new List<string>();
@@ -110,7 +122,22 @@ namespace G_CSHARP_ProcessNote
             {
                 sb.AppendLine(thread);
             }
-            MessageBox.Show(sb.ToString());
+            MessageBox.Show("Current process threads' IDs:\n" + sb);
+        }
+
+        private void addCommentButton_Click(object sender, EventArgs e)
+        {
+            var currentProcess = processList.CurrentRow.Cells[1].Value.ToString();
+            var comment = AddCommentTextBox.Text;
+            if (!commentDictionary.ContainsKey(currentProcess))
+            {
+                commentDictionary.Add(currentProcess, comment);
+            }
+            else
+            {
+                commentDictionary[currentProcess] += comment;
+            }
+            AddCommentTextBox.Text = string.Empty;
         }
     }
 }
