@@ -74,28 +74,28 @@ namespace G_CSHARP_ProcessNote
             if (e.RowIndex != -1)
             {
                 // process cpu usage
-                var currentProcess = processList.Rows[e.RowIndex].Cells[1].Value;
+                var currentProcess = processList.CurrentRow.Cells[1].Value.ToString();
                 var totalCpuUsage = new PerformanceCounter("Processor", "% Processor Time", "_Total");
-                var processCpuUsage = new PerformanceCounter("Process", "% Processor Time", currentProcess.ToString());
+                var processCpuUsage = new PerformanceCounter("Process", "% Processor Time", currentProcess);
                 var calculatedProcessUsageFirst = (totalCpuUsage.NextValue() / 100) * processCpuUsage.NextValue();
                 System.Threading.Thread.Sleep(100);
                 var calculatedProcessUsage = (totalCpuUsage.NextValue() / 100) * processCpuUsage.NextValue();
                 CPUTextBox.Text = calculatedProcessUsage + "%";
                 // process memory usage
-                int memsize = 0;
-                var processMemoryUsage = new PerformanceCounter("Process", "Working Set - Private", currentProcess.ToString());
-                memsize = Convert.ToInt32((processMemoryUsage.NextValue()) / (int)(1024));
+                int memsize=0;
+                var processMemoryUsage = new PerformanceCounter("Process", "Working Set - Private", currentProcess);
+                memsize = Convert.ToInt32(processMemoryUsage.NextValue() / (int)(1024));
                 memoryTextBox.Text = memsize / 1000 + "MB";
                 // process running/start time
-                Process[] process = Process.GetProcessesByName(currentProcess.ToString());
+                Process[] process = Process.GetProcessesByName(currentProcess);
                 runningTimeTextBox.Text = (DateTime.Now - process[0].StartTime).ToString();
                 startTimeTextBox.Text = process[0].StartTime.ToString();
                 // process' thread counter
                 numberOfThreadTextBox.Text = process[0].Threads.Count.ToString();
                 // process' comment
-                if (commentDictionary.ContainsKey(currentProcess.ToString()))
+                if (commentDictionary.ContainsKey(currentProcess))
                 {
-                    commentsTextBox.Text = commentDictionary[currentProcess.ToString()];
+                    commentsTextBox.Text = commentDictionary[currentProcess];
                 }
                 else
                 {
