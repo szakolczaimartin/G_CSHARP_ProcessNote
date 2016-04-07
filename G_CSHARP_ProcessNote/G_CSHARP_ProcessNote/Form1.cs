@@ -138,6 +138,7 @@ namespace G_CSHARP_ProcessNote
                 commentDictionary[currentProcess] += comment;
             }
             AddCommentTextBox.Text = string.Empty;
+            commentsTextBox.Text = commentDictionary[currentProcess];
         }
     }
 }

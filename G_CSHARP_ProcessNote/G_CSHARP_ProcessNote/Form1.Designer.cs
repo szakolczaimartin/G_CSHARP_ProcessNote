@@ -80,7 +80,7 @@
             // 
             // showThreadsButton
             // 
-            this.showThreadsButton.Location = new System.Drawing.Point(143, 261);
+            this.showThreadsButton.Location = new System.Drawing.Point(143, 262);
             this.showThreadsButton.Name = "showThreadsButton";
             this.showThreadsButton.Size = new System.Drawing.Size(100, 23);
             this.showThreadsButton.TabIndex = 13;
