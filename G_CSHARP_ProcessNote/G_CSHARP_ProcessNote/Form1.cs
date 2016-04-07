@@ -1,13 +1,39 @@
-﻿using System;
+﻿#region File Header
+/*[ Compilation unit ----------------------------------------------------------
+
+   Component       : Process Note form file
+
+   Name            : Code_Gangstaz
+
+   Last Author     : Vas Richárd
+
+   Language        : C#
+
+   Creation Date   :  2016.04.07
+
+   Description     : As an IT administrator I would like to have to check what kind of processes are running on the machine. I would like to make comment on it. As an IT administrator I would like to get the running process names and If I select one of it I would like to see some major property of it. These are: CPU usage, Memory usage, Running time, Start time, Threads of it in another dialog. I would like to comment textbox to left some note on it.
+
+
+               Copyright (C) Codecool Kft 2016 All Rights Reserved
+
+-----------------------------------------------------------------------------*/
+/*] END */
+
+#endregion File Header
+
+#region Used Namespaces 
+using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Diagnostics;
-using System.Drawing;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+#endregion Used Namespaces
+
+
+
+
+
+
 
 namespace G_CSHARP_ProcessNote
 {
