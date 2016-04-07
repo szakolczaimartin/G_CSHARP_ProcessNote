@@ -156,7 +156,6 @@
             this.processList.Size = new System.Drawing.Size(471, 163);
             this.processList.TabIndex = 24;
             this.processList.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.processList_CellClick);
-            this.processList.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             this.processList.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.processList_MouseDoubleClick);
             // 
             // PID_box

@@ -11,7 +11,10 @@
 
    Creation Date   :  2016.04.07
 
-   Description     : As an IT administrator I would like to have to check what kind of processes are running on the machine. I would like to make comment on it. As an IT administrator I would like to get the running process names and If I select one of it I would like to see some major property of it. These are: CPU usage, Memory usage, Running time, Start time, Threads of it in another dialog. I would like to comment textbox to left some note on it.
+   Description     : As an IT administrator I would like to have to check what kind of processes are running on the machine. 
+                     I would like to make comment on it. As an IT administrator I would like to get the running process names and 
+                     If I select one of it I would like to see some major property of it. These are: CPU usage, Memory usage, Running 
+                     time, Start time, Threads of it in another dialog. I would like to comment textbox to left some note on it.
 
 
                Copyright (C) Codecool Kft 2016 All Rights Reserved
@@ -29,32 +32,15 @@ using System.Text;
 using System.Windows.Forms;
 #endregion Used Namespaces
 
-
-
-
-
-
-
 namespace G_CSHARP_ProcessNote
 {
     public partial class Form1 : Form
     {
-
-        Dictionary<string, string> commentDictionary = new Dictionary<string, string>();
+        readonly Dictionary<string, string> _commentDictionary = new Dictionary<string, string>();
 
         public Form1()
         {
             InitializeComponent();
-        }
-
-        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
         }
         private void alwaysOnTopButton_CheckedChanged(object sender, EventArgs e)
         {
@@ -63,7 +49,7 @@ namespace G_CSHARP_ProcessNote
 
         private void ExitButton(object sender, FormClosingEventArgs e)
         {
-            if (commentDictionary.Count != 0)
+            if (_commentDictionary.Count != 0)
             {
                 DialogResult dialog = MessageBox.Show("Are you sure?\nAll of your comments will be lost!", "Exit",
                MessageBoxButtons.YesNo);
@@ -120,9 +106,9 @@ namespace G_CSHARP_ProcessNote
                 // process' thread counter
                 numberOfThreadTextBox.Text = process[0].Threads.Count.ToString();
                 // process' comment
-                if (commentDictionary.ContainsKey(currentProcess))
+                if (_commentDictionary.ContainsKey(currentProcess))
                 {
-                    commentsTextBox.Text = commentDictionary[currentProcess];
+                    commentsTextBox.Text = _commentDictionary[currentProcess];
                 }
                 else
                 {
@@ -156,16 +142,16 @@ namespace G_CSHARP_ProcessNote
         {
             var currentProcess = processList.CurrentRow.Cells[1].Value.ToString();
             var comment = AddCommentTextBox.Text;
-            if (!commentDictionary.ContainsKey(currentProcess))
+            if (!_commentDictionary.ContainsKey(currentProcess))
             {
-                commentDictionary.Add(currentProcess, comment);
+                _commentDictionary.Add(currentProcess, comment);
             }
             else
             {
-                commentDictionary[currentProcess] += comment;
+                _commentDictionary[currentProcess] += comment;
             }
             AddCommentTextBox.Text = string.Empty;
-            commentsTextBox.Text = commentDictionary[currentProcess];
+            commentsTextBox.Text = _commentDictionary[currentProcess];
         }
     }
 }
