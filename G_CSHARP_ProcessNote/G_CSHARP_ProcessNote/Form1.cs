@@ -37,16 +37,21 @@ namespace G_CSHARP_ProcessNote
 
         private void ExitButton(object sender, FormClosingEventArgs e)
         {
-            DialogResult dialog = MessageBox.Show("Are you sure?\nAll of your comments will be lost!", "Exit",
+            if (commentDictionary.Count != 0)
+            {
+                DialogResult dialog = MessageBox.Show("Are you sure?\nAll of your comments will be lost!", "Exit",
                MessageBoxButtons.YesNo);
-            if (dialog == DialogResult.Yes)
-            {
-                Application.ExitThread();
+                if (dialog == DialogResult.Yes)
+                {
+                    Application.ExitThread();
+                }
+                else if (dialog == DialogResult.No)
+                {
+                    e.Cancel = true;
+                }
             }
-            else if (dialog == DialogResult.No)
-            {
-                e.Cancel = true;
-            }
+            Application.ExitThread();
+
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -58,15 +63,11 @@ namespace G_CSHARP_ProcessNote
             {
                 processList.Rows.Add(theprocess.Id, theprocess.ProcessName);
             }
-
-
         }
 
         private void processList_MouseDoubleClick(object sender, MouseEventArgs e)
         {
-
             Form1_Load(sender, e);
-
         }
 
         private void processList_CellClick(object sender, DataGridViewCellEventArgs e)
